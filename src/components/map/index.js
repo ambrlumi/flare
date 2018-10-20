@@ -8,10 +8,12 @@ const Map = ReactMapboxGl({
 class MapGL extends Component {
   render() {
     return (
-      <Map
-        style="mapbox://styles/mapbox/streets-v9"
-        containerStyle={{ height: "100vh", width: "100vw" }}
-      />
+      <div className="map">
+        <Map
+          style="mapbox://styles/mapbox/streets-v9"
+          containerStyle={{ height: "100vh", width: "100vw" }}
+        />
+      </div>
     );
   }
 }
