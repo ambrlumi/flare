@@ -1,14 +1,19 @@
 import React, { Component } from "react";
-import Container from "./components/container";
 
-class App extends Component {
+import Navbar from "./components/Navbar";
+import MapGL from "./components/Map";
+import Sidebar from "./components/Sidebar";
+
+export default class App extends Component {
   render() {
     return (
       <div>
-        <Container />
+        <Navbar />
+        <div className="main">
+          <Sidebar />
+          <MapGL />
+        </div>
       </div>
     );
   }
 }
-
-export default App;
