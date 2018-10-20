@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
-const Map = ReactMapboxGl({
-  accessToken:
-    "pk.eyJ1IjoiZGNhc3QxODgiLCJhIjoiY2pmNjE4cW5sMTVlbDJ4cDRuaXg2bGdocCJ9._vCZx3elzygB4Alr55WMYw"
-});
 
-class MapGL extends Component {
+import config from "../config";
+
+const Map = ReactMapboxGl({ accessToken: config.MAP_TOKEN });
+
+export default class MapGL extends React.Component {
   render() {
     return (
       <div className="map">
@@ -17,5 +17,3 @@ class MapGL extends Component {
     );
   }
 }
-
-export default MapGL;
