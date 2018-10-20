@@ -10,7 +10,7 @@ class MapGL extends Component {
     return (
       <div className="map">
         <Map
-          style="mapbox://styles/mapbox/streets-v9"
+          style="git pmapbox://styles/mapbox/streets-v9"
           containerStyle={{ height: "100vh", width: "100vw" }}
         >
           <Feature />
