@@ -1,16 +1,95 @@
+@font-face {
+  font-family: Poppins-Bold;
+  src: url("../fonts/product-sans/Poppins-Bold.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url("../fonts/product-sans/Poppins-Medium.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Light;
+  src: url("../fonts/product-sans/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../fonts/product-sans/Poppins-Regular.ttf");
+}
+
+body {
+  font-family: Poppins-Medium !important;
+}
+
+*:focus {
+  box-shadow: 0 !important;
+  outline: none !important;
+}
+
 .main {
-  display: flex;
+  display: inline-flex;
   height: calc(100vh - 56px);
 }
 
 .map {
-  width: 80%;
+  overflow: hidden;
 }
 
 .sidebar {
-  width: 20%;
+  width: 300px;
+  overflow-y: scroll;
+}
+
+.sidebar .card {
+  margin: 20px 10px !important;
+  border: 0px solid transparent !important;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar .card p {
+  margin-bottom: 0 !important;
+}
+
+.sidebar .card .card-body p {
+  font-family: Poppins-Light !important;
+}
+
+.sidebar .card .card-header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar .card .card-header-info img {
+  height: 20px;
+}
+
+.sidebar .card .card-located {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar .card .card-located button {
+  background: transparent !important;
+  border: 1px solid black;
+}
+.sidebar .card .card-located button:hover {
+  cursor: pointer;
+}
+
+.sidebar .card .card-body {
+  padding: 0.9rem !important;
+}
+
+.sidebar .card {
+  display: flex;
+  justify-content: space-between;
 }
 
 .mapboxgl-marker img {
   height: 50px;
+}
+
+.mapboxgl-canvas {
+  width: 100%;
+  height: 100%;
 }

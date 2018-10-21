@@ -5,28 +5,13 @@ import config from "../config";
 
 export default class MapGL extends React.Component {
   state = {
-    cases: [
-      {
-        lat: "25.7698",
-        lng: "-80.3676",
-        make: "VW",
-        color: "Blue",
-        tag: "XXX234"
-      },
-      {
-        lat: "25.7684",
-        lng: "-80.3671",
-        make: "VW",
-        color: "Blue",
-        tag: "XXX234"
-      }
-    ],
+    focusCase: this.props.focusCase,
     viewport: {
-      width: 100,
-      height: 100,
-      latitude: 0,
-      longitude: 0,
-      zoom: 14
+      width: 1580,
+      height: 1280,
+      latitude: 25.736543,
+      longitude: -80.307116,
+      zoom: 8
     }
   };
 
@@ -34,37 +19,47 @@ export default class MapGL extends React.Component {
     const { latitude, longitude } = await this.getCoords();
     const { viewport } = this.state;
     this.setState({ viewport: { ...viewport, latitude, longitude } });
-
-    const mapContainer = document.querySelector(".map");
-    const { width, height } = mapContainer.getClientRects()[0];
-
-    this.setState(({ cases, viewport }) => ({
-      cases,
-      viewport: { ...viewport, width: width, height: height }
-    }));
   };
 
+  componentWillReceiveProps({ focusCase }) {
+    const { viewport } = this.state;
+    const { lat: latitude, lng: longitude } = focusCase;
+
+    this.setState({
+      focusCase,
+      viewport: { ...viewport, zoom: 12, latitude, longitude }
+    });
+  }
+
   getCoords = () =>
-    new Promise(resolve => {
-      navigator.geolocation.getCurrentPosition(({ coords }) => {
-        resolve(coords);
-      });
+    new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        ({ coords }) => resolve(coords),
+        err => reject(err),
+        { enableHighAccuracy: true }
+      );
     });
 
   markers = cases =>
     cases.map(({ lat, lng }, i) => (
       <Marker key={i} latitude={parseFloat(lat)} longitude={parseFloat(lng)}>
-        <img src={require("../static/images/marker.svg")} alt="marker" />
+        <img src={require("../static/images/fire.svg")} alt="marker" />
       </Marker>
     ));
 
   render() {
-    const { cases, viewport } = this.state;
+    const { viewport } = this.state;
+    const { openCases } = this.props;
 
     return (
       <div className="map">
-        <ReactMapGL {...viewport} mapboxApiAccessToken={config.MAP_TOKEN}>
-          {this.markers(cases)}
+        <ReactMapGL
+          {...viewport}
+          mapboxApiAccessToken={config.MAP_TOKEN}
+          onViewportChange={viewport => this.setState({ viewport })}
+          mapStyle="mapbox://styles/mapbox/streets-v8"
+        >
+          {this.markers(openCases)}
         </ReactMapGL>
       </div>
     );
