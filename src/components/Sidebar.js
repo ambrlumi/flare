@@ -19,7 +19,7 @@ export default class Sidebar extends React.Component {
 
     return (
       <div className="sidebar">
-        {openCases.length > 0 && this.renderCases(openCases)}
+        {openCases.length > 0 && this.renderCases(openCases.reverse())}
         {openCases.length > 0 || <p>Retrieving cases.. </p>}
       </div>
     );
