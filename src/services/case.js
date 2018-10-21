@@ -1,6 +1,7 @@
 import axios from "axios";
+import config from "../config";
+const { BLAZE_URL } = config;
 
-const { BLAZE_URL } = process.env;
 const ti = axios.create({ baseURL: BLAZE_URL });
 
 const cases = () =>

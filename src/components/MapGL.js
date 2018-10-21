@@ -1,6 +1,8 @@
 import React from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 
+import config from "../config";
+
 export default class MapGL extends React.Component {
   state = {
     focusCase: this.props.focusCase,
@@ -53,7 +55,7 @@ export default class MapGL extends React.Component {
       <div className="map">
         <ReactMapGL
           {...viewport}
-          mapboxApiAccessToken={process.env.MAP_TOKEN}
+          mapboxApiAccessToken={config.MAP_TOKEN}
           onViewportChange={viewport => this.setState({ viewport })}
           mapStyle="mapbox://styles/mapbox/streets-v8"
         >
