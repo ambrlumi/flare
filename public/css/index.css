@@ -10,3 +10,7 @@
 .sidebar {
   width: 20%;
 }
+
+.mapboxgl-marker img {
+  height: 50px;
+}
