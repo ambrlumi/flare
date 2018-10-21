@@ -13,7 +13,7 @@ const Card = props => {
             src={require("../../static/images/car_front.svg")}
             alt="marker"
           />
-          <p className="card-text">{props.case.make}</p>
+          <p className="card-text">{props.case.color}</p>
         </div>
         <p>lat: {props.case.lat}</p>
         <div className="card-located">
