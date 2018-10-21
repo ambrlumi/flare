@@ -1,22 +1,20 @@
-@font-face {
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* @font-face {
   font-family: Poppins-Bold;
-  src: url("../fonts/product-sans/Poppins-Bold.ttf");
 }
 
 @font-face {
   font-family: Poppins-Medium;
-  src: url("../fonts/product-sans/Poppins-Medium.ttf");
 }
 
 @font-face {
   font-family: Poppins-Light;
-  src: url("../fonts/product-sans/Poppins-Light.ttf");
 }
 
 @font-face {
   font-family: Poppins-Regular;
-  src: url("../fonts/product-sans/Poppins-Regular.ttf");
-}
+} */
 
 body {
   font-family: Poppins-Medium !important;
