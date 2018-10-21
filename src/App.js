@@ -12,7 +12,6 @@ export default class App extends Component {
   componentDidMount = async () => {
     try {
       const openCases = await caseService.cases();
-
       this.setState({ openCases });
     } catch (e) {
       this.setState({ openCases: [] });
