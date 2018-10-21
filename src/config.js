@@ -1,5 +1,5 @@
 const config = {
-  BLAZE_URL: "http://a4a3223c.ngrok.io/api",
+  BLAZE_URL: "https://a4a3223c.ngrok.io/api",
   MAP_TOKEN:
     "pk.eyJ1IjoiZGNhc3QxODgiLCJhIjoiY2pmNjE4cW5sMTVlbDJ4cDRuaXg2bGdocCJ9._vCZx3elzygB4Alr55WMYw"
 };
