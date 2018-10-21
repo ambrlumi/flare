@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Navbar from "./components/Navbar";
-import MapGL from "./components/Map";
+import MapGL from "./components/MapGL";
 import Sidebar from "./components/Sidebar";
 
 export default class App extends Component {

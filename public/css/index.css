@@ -1,5 +1,6 @@
 .main {
   display: flex;
+  height: calc(100vh - 56px);
 }
 
 .map {
@@ -8,4 +9,8 @@
 
 .sidebar {
   width: 20%;
+}
+
+.mapboxgl-marker img {
+  height: 50px;
 }

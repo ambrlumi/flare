@@ -1,5 +1,6 @@
 const config = {
-  MAP_TOKEN: ""
+  MAP_TOKEN:
+    "pk.eyJ1IjoiZGNhc3QxODgiLCJhIjoiY2pmNjE4cW5sMTVlbDJ4cDRuaXg2bGdocCJ9._vCZx3elzygB4Alr55WMYw"
 };
 
 export default config;
